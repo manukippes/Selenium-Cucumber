@@ -16,9 +16,8 @@ Configuración de ambiente:
    b. Instalar Allure: scoop install allure
 
 Ejecutar pruebas:
-1. mvn clean test
-o
-1. mvn clean test -Dambiente=test -Dcucumber.options="--tags '@DetalleProducto or @ListadoProductos' --tags '@High'
+- mvn clean test (basica)
+- mvn clean test -Dambiente=test -Dcucumber.options="--tags '@DetalleProducto or @ListadoProductos' --tags '@High' (detallada)
 
 Reporte Cucumber-reporting:
 1. \target\cucumber-html-reports\overview-features.html
