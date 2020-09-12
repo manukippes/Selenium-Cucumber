@@ -16,7 +16,7 @@ public class Landing extends PaginaBase {
 	@Autowired
 	public Landing (WebDriver driver) {super(driver);}
 
-	private final static String categoria = "//a[@class='nav-menu-categories-link']";
+	private final static String categoria = "//a[@class='nav-menu-categories-link' and text()='Categorías']";
 	private final static String tecnologia = "//ul//li//a[text()='Tecnología']";
 	private final static String tv = "//h2[@class='nav-categs-detail__title']//a[text()='TVs']";
 	private final static String campoBusqueda = "//input[@name='as_word']";
