@@ -1,26 +1,27 @@
 # Selenium-Cucumber-SpringBoot
 
-Framework de pruebas sobre API REST
+Framework de pruebas sobre aplicaciones web utilizando selenium webdriver
 
 Tecnologias utilizadas:
+- Lenguaje: Java - Maven
+- Librerias: SpringBoot - Selenium - Cucumber
+- Reporte: Allure - Cucumber-reporting
+- IDE: Eclipse
+- SO: Windows 10
 
-Lenguaje: Java - Maven
-Librerias: SpringBoot - Cucumber
-Reporte: Allure - Cucumber-reporting
-IDE: Eclipse
-SO: Windows 10
 Configuración de ambiente:
-
-Descargar y configurar variables de entorno de JAVA (JAVA_HOME y PATH): JDK_1.8.0
-Para instalar Allure Report: a. Descargar scoop c. Instalar Allure: scoop install allure
+1. Descargar y configurar variables de entorno de JAVA (JAVA_HOME y PATH): JDK_1.8.0
+2. Para instalar Allure Report: <br>
+   a. Descargar scoop <br>
+   b. Instalar Allure: scoop install allure
 
 Ejecutar pruebas:
-mvn clean test
+1. mvn clean test
 o
-mvn clean test -Dambiente=test -Dcucumber.options="--tags '@DetalleProducto or @ListadoProductos' --tags '@High'
+1. mvn clean test -Dambiente=test -Dcucumber.options="--tags '@DetalleProducto or @ListadoProductos' --tags '@High'
 
 Reporte Cucumber-reporting:
-\target\cucumber-html-reports\overview-features.html
+1. \target\cucumber-html-reports\overview-features.html
 
 Ejecutar reporte Allure desde la raiz de proyecto:
-allure serve -h 127.0.0.1 -p 8087 --> -h 127.0.0.1 -p 8087 son opcionales
+1. allure serve -h 127.0.0.1 -p 8087 --> -h 127.0.0.1 -p 8087 son opcionales
