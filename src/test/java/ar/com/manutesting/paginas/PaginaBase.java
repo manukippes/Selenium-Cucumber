@@ -153,7 +153,19 @@ public class PaginaBase {
 		log.info("Se validó que "+textoEsperado+" se visualiza dentro del elemento con locator: "+nombreElemento);
 	}
 
-
+	/**
+	 * @Definición:  Presiona un combo de la página y busca un elemento dentro de el.
+     *				Hace click en el combo y luego click en el valor dentro de el.
+	 * @param combo -- Xpath del combo a presionar.
+	 * @param value -- Xpath del valor a seleccionar dentro del combo.
+	 * @param nombreElemento -- Nombre con el cual se va a representar el elemento en el log
+	 */
+	public void seleccionarUnElementoDeUnCombo(String combo, String value, String nombreElemento) throws Exception {
+		encontrarElemento(combo).click();
+		encontrarElemento(value).click();
+		log.info("Se seleccionó el valor: "+value+" del elemento: "+nombreElemento);
+	}
+	
 	/**
 	 * @Definición:  Cantidad de elementos que coinciden con el locator
 	 * @param locator -- Xpath por el cual se van a encontrar los elementos dentro de la página.

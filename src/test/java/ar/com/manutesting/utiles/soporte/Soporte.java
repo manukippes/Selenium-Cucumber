@@ -27,7 +27,7 @@ public class Soporte {
 	
 	/**
 	 * @Definición:  Devuelve la ruta completa (C:\\....) de la carpeta image dentro de recursos.
-	 * @return -- Ruta completa. Ejemplo: C:\Emmanuel\SQA_Automatizaciones\template\src\test\resources\image
+	 * @return -- Ruta completa. Ejemplo: C:\...\...\template\src\test\resources\image
 	 * @throws Exception
 	 */
 	public String getRutaDeCarpetaImage() throws Exception {
@@ -38,7 +38,7 @@ public class Soporte {
 	
 	/**
 	 * @Devuelve la ruta completa (C:\\....) de la carpeta drivers dentro de recursos.
-	 * @return -- Ruta completa. Ejemplo: C:\Emmanuel\SQA_Automatizaciones\template\src\test\resources\drivers
+	 * @return -- Ruta completa. Ejemplo: C:\...\...\template\src\test\resources\drivers
 	 * @throws Exception
 	 */
 	public String getRutaDeCarpetaDrivers() throws Exception {
@@ -88,8 +88,8 @@ public class Soporte {
 	 */
 	@Attachment(value = "CucumberReport - Captura de pantalla", type = "image/png")
 	public byte[] capturarPantallaParaReporteCucumber() throws Exception {
-		final byte[] screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-		return screenshot;
+		final byte[] capturaPantalla = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
+		return capturaPantalla;
 	}
 	
 	/**
@@ -100,9 +100,9 @@ public class Soporte {
 	 * @throws Exception
 	 */
 	public String capturarPantallaYGuardarla(String nameFile) throws Exception {
-		final File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		final File capturaPantalla = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 		String urlDestino = "./target/imagenes/" + nameFile;
-		FileUtils.copyFile(screenshot, new File(urlDestino));
+		FileUtils.copyFile(capturaPantalla, new File(urlDestino));
 		return urlDestino;
 	}
 	
