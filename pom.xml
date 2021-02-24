@@ -3,9 +3,8 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>ar.com.manutesting</groupId>
-	<artifactId>Selenium-Cucumber-SpringBoot</artifactId>
+	<artifactId>Test-Web-MercadoLibre</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-
 	<build>
 		<plugins>
 			<plugin>
@@ -30,13 +29,11 @@
 			</plugin>
 		</plugins>
 	</build>
-
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.2.RELEASE</version>
 	</parent>
-
 	<properties>
 		<cucumber.version>5.6.0</cucumber.version>
 		<selenium.version>3.141.59</selenium.version>
@@ -45,7 +42,6 @@
 		<maven.compile.encoding>UTF-8</maven.compile.encoding>
 		<aspectj.version>1.9.6</aspectj.version>
 	</properties>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -58,7 +54,12 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		<!--Cucumber -->
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
@@ -78,20 +79,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--Selenium -->
-		<dependency>
-			<groupId>org.seleniumhq.selenium</groupId>
-			<artifactId>selenium-java</artifactId>
-		</dependency>
-
-		<!--Lombok -->
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
 			<scope>provided</scope>
 		</dependency>
 
-		<!--Log -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
@@ -102,21 +95,12 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--FileUtils -->
-		<dependency>
-			<groupId>commons-io</groupId>
-			<artifactId>commons-io</artifactId>
-			<version>2.6</version>
-		</dependency>
-
-		<!--Assert -->
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
 			<scope>test</scope>
 		</dependency>
 
-		<!--Report Cucumber -->
 		<dependency>
 			<groupId>net.masterthought</groupId>
 			<artifactId>cucumber-reporting</artifactId>
@@ -126,13 +110,6 @@
 			<groupId>io.qameta.allure</groupId>
 			<artifactId>allure-cucumber5-jvm</artifactId>
 			<version>2.13.5</version>
-		</dependency>
-
-		<!-- Excel reading -->
-		<dependency>
-			<groupId>org.apache.poi</groupId>
-			<artifactId>poi-ooxml</artifactId>
-			<version>4.1.2</version>
 		</dependency>
 	</dependencies>
 </project>

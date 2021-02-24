@@ -30,19 +30,19 @@ public class Landing extends PaginaBase {
 	}
 	
 	public void clickCategoria() throws Exception {
-		clickElemento(categoria, "Categoria");
+		clickElement(categoria, "Categoria");
 	}
 
 	public void clickTecnologia() throws Exception {
-		clickElemento(tecnologia, "Tecnologìa");
+		clickElement(tecnologia, "Tecnologìa");
 	}
 
 	public void clickTV() throws Exception {
-		clickElemento(tv, "TVs");
+		clickElement(tv, "TVs");
 	}
 
 	public void ingresarPalabraEnElCampoDeBusqueda(String palabraClave) throws Exception {
-		escribirTextoEnElemento(campoBusqueda, palabraClave, "Campo de Busqueda");	
-		presionarUnaTecla(campoBusqueda, Tecla.ENTER, "Tecla Enter");
+		sendTextOfElement(campoBusqueda, palabraClave, "Campo de Busqueda");	
+		pressKey(campoBusqueda, Tecla.ENTER, "Tecla Enter");
 	}
 }

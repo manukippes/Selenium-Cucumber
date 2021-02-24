@@ -17,14 +17,14 @@ public class DetalleProducto extends PaginaBase {
 	private final static String resolucionProducto = "(//li[@class='ui-pdp-features__item'])[1]";
 
 	public void validarPrecio(String precio) throws Exception {
-		validarTextoDeElemento(precioProducto, precio, "Precio");
+		validExactTextOfElement(precioProducto, precio, "Precio");
 	}
 
 	public void validarEstado(String estado) throws Exception {
-		validarQueElementoContengaUnTexto(estadoProducto, estado, "Estado");
+		validTextContainsOfElement(estadoProducto, estado, "Estado");
 	}
 
 	public void validarResolucion(String resolucion) throws Exception {
-		validarTextoDeElemento(resolucionProducto, resolucion, "Resolucion");
+		validExactTextOfElement(resolucionProducto, resolucion, "Resolucion");
 	}
 }
