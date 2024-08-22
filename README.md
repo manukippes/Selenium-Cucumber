@@ -19,3 +19,5 @@ Ejecutar pruebas:
 
 Ejecutar reporte Allure desde la raiz de proyecto:
 1. allure serve -h 127.0.0.1 -p 8087 --> -h 127.0.0.1 -p 8087 son opcionales
+
+Proximamente:
