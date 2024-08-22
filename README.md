@@ -15,7 +15,7 @@ Configuración de ambiente:
 
 Ejecutar pruebas:
 - mvn clean test (basica)
-- mvn clean test -Dambiente=test -Dcucumber.options="--tags '@DetalleProducto or @ListadoProductos' --tags '@High' (detallada)
+- mvn clean test -Dambiente=test -Dcucumber.options="--tags '@XYZ' --tags '@High' (detallada)
 
 Ejecutar reporte Allure desde la raiz de proyecto:
 1. allure serve -h 127.0.0.1 -p 8087 --> -h 127.0.0.1 -p 8087 son opcionales
