@@ -10,7 +10,7 @@ public class LoggerHelper {
     /**
      * Create log static variable
      */
-    public static void setupLogger(){
+    public static void createLogger(){
         log = LoggerFactory.getLogger(LoggerHelper.class);
     }
 }

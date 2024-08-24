@@ -8,7 +8,7 @@
 
     <timestamp key="bySecond" datePattern="yyyyMMdd'T'HHmmss"/>
     <appender name="FILE" class="ch.qos.logback.core.FileAppender">
-        <file>target/logs/kimatesting-Logs-${bySecond}.txt</file>
+        <file>target/logs/${bySecond}.txt</file>
         <encoder>
             <pattern>%d{HH:mm:ss.SSS} - %-5level - [ %class %method ] - %msg%n</pattern>
         </encoder>
