@@ -56,7 +56,11 @@ public class BasePage {
 	}
 
 	/*** UTILS	***/
-	public Integer elementCount(String locator) throws Exception {
+	protected Integer elementCount(String locator) throws Exception {
 		return findElementsByXpath(locator).size();
+	}
+
+	protected String getTitle() {
+		return driver.getTitle();
 	}
 }

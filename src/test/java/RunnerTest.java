@@ -10,18 +10,19 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/",
-        plugin= {"pretty","json:target/cucumber.json", "junit:target/cucumber.xml", "io.qameta.allure.cucumber5jvm.AllureCucumber5Jvm"},
+        plugin= {"pretty","json:target/cucumber.json", "junit:target/cucumber.xml"},
         monochrome=true,
+        tags = "@landing",
         dryRun = false
 )
 public class RunnerTest {
-	@AfterClass
-	public static void generarReporte() {
-		File reportOutputDirectory = new File("target");
-		List<String> jsonFiles = new ArrayList<String>();
-		jsonFiles.add("target/cucumber.json");
-
-		String buildNumber = "1";
-		String projectName = "App Prueba";
-	}
+//	@AfterClass
+//	public static void generarReporte() {
+//		File reportOutputDirectory = new File("target");
+//		List<String> jsonFiles = new ArrayList<String>();
+//		jsonFiles.add("target/cucumber.json");
+//
+//		String buildNumber = "1";
+//		String projectName = "App Prueba";
+//	}
 }
