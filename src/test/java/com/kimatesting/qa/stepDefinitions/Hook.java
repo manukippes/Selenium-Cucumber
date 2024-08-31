@@ -1,30 +1,22 @@
-package com.kimatesting.qa.stepDefinitions.utils;
+package com.kimatesting.qa.stepDefinitions;
 
+import com.kimatesting.qa.utils.DriverManager;
 import com.kimatesting.qa.utils.LoggerHelper;
-import com.kimatesting.qa.utils.enums.TomarCaptura;
-import com.kimatesting.qa.utils.soporte.Soporte;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
-import io.cucumber.java.Scenario;
 
 public class Hook {
-	private Soporte soporte;
-	private TomarCaptura tomarCaptura;
-
-	private String nombreEscenario;
-	private String estadoEscenario;
-
 
 	@Before
-	public void init(Scenario escenario) {
+	public void init() {
 		//nombreEscenario = escenario.getName().toUpperCase();
-		BaseTest.initDriver();
+		DriverManager.initDriver();
 		LoggerHelper.createLogger();
 	}
 
 	@After
-	public void turnDown(Scenario escenario) {
-		BaseTest.closeDriver();
+	public void turnDown() {
+		DriverManager.closeDriver();
 	}
 
 //	@After

@@ -1,4 +1,4 @@
-package com.kimatesting.qa.utils.soporte;
+package com.kimatesting.qa.utils;
 
 import java.io.ByteArrayInputStream;
 import java.io.File;
@@ -14,7 +14,7 @@ import org.openqa.selenium.WebDriver;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 
-public class Soporte {
+public class Support {
 
 	protected WebDriver driver;
 	
