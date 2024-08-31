@@ -12,8 +12,7 @@ import io.cucumber.junit.CucumberOptions;
         features = "src/test/resources/features/",
         plugin= {"pretty","json:target/cucumber.json", "junit:target/cucumber.xml"},
         monochrome=true,
-        tags = "@landing",
-        dryRun = false
+        tags = "@landing"
 )
 public class RunnerTest {
 //	@AfterClass

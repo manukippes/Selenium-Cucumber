@@ -1,4 +1,4 @@
-package com.kimatesting.qa.utils.enums;
+package com.kimatesting.qa.enums;
 
 public enum Navegador {
 	CHROME, 
