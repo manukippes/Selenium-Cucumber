@@ -2,7 +2,7 @@ package com.kimatesting.qa.stepDefinitions;
 
 import com.kimatesting.qa.enums.MenuSections;
 import com.kimatesting.qa.pages.LandingPage;
-import com.kimatesting.qa.utils.DriverManager;
+import com.kimatesting.qa.utils.driver.DriverManager;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;

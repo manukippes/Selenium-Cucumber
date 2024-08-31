@@ -1,17 +1,23 @@
 package com.kimatesting.qa.stepDefinitions;
 
-import com.kimatesting.qa.utils.DriverManager;
+import com.kimatesting.qa.enums.Env;
+import com.kimatesting.qa.utils.ConfigLoader;
 import com.kimatesting.qa.utils.LoggerHelper;
+import com.kimatesting.qa.utils.driver.DriverManager;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
+
+import java.util.Optional;
 
 public class Hook {
 
 	@Before
-	public void init() {
-		//nombreEscenario = escenario.getName().toUpperCase();
+	public void init() throws Exception {
+		String env = Optional.ofNullable(System.getProperty("env")).orElse(String.valueOf(Env.QA));
+		ConfigLoader.loadFile(env);
 		DriverManager.initDriver();
 		LoggerHelper.createLogger();
+
 	}
 
 	@After
