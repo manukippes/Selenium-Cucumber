@@ -10,7 +10,9 @@ import io.cucumber.junit.CucumberOptions;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         features = "src/test/resources/features/",
-        plugin= {"pretty","json:target/cucumber.json", "junit:target/cucumber.xml"},
+        plugin= {
+                "com.kimatesting.qa.utils.ReportListener"
+        },
         monochrome=true,
         tags = "@landing"
 )

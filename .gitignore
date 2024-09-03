@@ -18,3 +18,4 @@ local.properties
 .externalToolBuilders/
 *.launch
 .buildpath
+/test-report.html

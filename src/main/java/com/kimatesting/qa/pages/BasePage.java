@@ -5,16 +5,13 @@ import java.util.List;
 
 import com.kimatesting.qa.utils.LoggerHelper;
 import com.kimatesting.qa.enums.FindBy;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
 
-	protected WebDriver driver;
+	protected static WebDriver driver;
 	protected WebDriverWait wait;
 	protected JavascriptExecutor jsExecutor;
 	private static final Duration TIMEOUT = Duration.ofSeconds(10);
@@ -79,5 +76,9 @@ public class BasePage {
 
 	protected String getPageUrl() {
 		return driver.getCurrentUrl();
+	}
+
+	public static String takeScreenshot() {
+		return ((TakesScreenshot) driver).getScreenshotAs(OutputType.BASE64);
 	}
 }
