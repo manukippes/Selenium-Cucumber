@@ -12,12 +12,13 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.net.URI;
 import java.util.HashMap;
+import java.util.Optional;
 
 
 public class DriverFactory {
 
-    private String selenoidUrl = ConfigLoader.getProperty("remote.selenoid.url");
-    private String seleniumGridUrl = ConfigLoader.getProperty("remote.selenium.grid.url");
+    private String selenoidUrl = Optional.ofNullable(System.getProperty("selenoidUrl")).orElse(ConfigLoader.getProperty("remote.selenoid.url"));
+    private String seleniumGridUrl = Optional.ofNullable(System.getProperty("seleniumGridUrl")).orElse(ConfigLoader.getProperty("remote.selenium.grid.url"));
 
     public WebDriver createDriver(Boolean remoteExecution, Platform remotePlatform, Browser browser, Boolean headless, int width, int height) throws Exception {
         if (remoteExecution) {
