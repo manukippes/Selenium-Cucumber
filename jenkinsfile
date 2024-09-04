@@ -1,0 +1,27 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Start Testing') {
+            steps {
+                withMaven(maven: 'maven-3.8.4')
+               {
+                    sh "mvn clean test"
+                }
+            }
+        }
+    }
+
+    post {
+        always{
+            publishHTML([
+                            reportName : 'Test Report',
+                            reportDir: 'target/',
+                            reportFiles: 'test-report.html',
+                            keepAll:     true,
+                            alwaysLinkToLastBuild: true,
+                            allowMissing: false
+                        ])
+        }
+    }
+}

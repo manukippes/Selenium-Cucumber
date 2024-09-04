@@ -2,10 +2,14 @@ package com.kimatesting.qa.utils.driver;
 
 
 import com.kimatesting.qa.enums.Browser;
+import com.kimatesting.qa.enums.Platform;
 import com.kimatesting.qa.utils.ConfigLoader;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.net.URI;
 import java.time.Duration;
 
 
@@ -18,7 +22,9 @@ public class DriverManager {
         Boolean browserHeadless = Boolean.valueOf(ConfigLoader.getProperty("browserHeadless"));
         int browserWidth = Integer.parseInt(ConfigLoader.getProperty("browserWidth"));
         int browserHeight = Integer.parseInt(ConfigLoader.getProperty("browserHeight"));
-        driver = driverFactory.createDriver(browser,browserHeadless, browserWidth, browserHeight);
+        Platform remotePlatform= Platform.valueOf(ConfigLoader.getProperty("remote.platform"));
+        Boolean remoteExecution= Boolean.valueOf(ConfigLoader.getProperty("remote.execution"));
+        driver =  driverFactory.createDriver(remoteExecution,remotePlatform,browser,browserHeadless, browserWidth, browserHeight);
     }
 
     public static WebDriver getDriver(){
