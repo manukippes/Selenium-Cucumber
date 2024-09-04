@@ -22,7 +22,7 @@ public class ReportListener implements ConcurrentEventListener {
 
 
     public ReportListener() {
-        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("test-report.html");
+        ExtentSparkReporter sparkReporter = new ExtentSparkReporter("target/test-report.html");
         extent = new ExtentReports();
         extent.attachReporter(sparkReporter);
         extent.setAnalysisStrategy(AnalysisStrategy.BDD);
@@ -35,7 +35,7 @@ public class ReportListener implements ConcurrentEventListener {
         eventPublisher.registerHandlerFor(TestRunFinished.class, this::onTestRunFinished);
     }
 
-    private synchronized void onTestStarted(TestCaseStarted event) {
+    private void onTestStarted(TestCaseStarted event) {
         TestCase testCase = event.getTestCase();
         String featureName = testCase.getUri().getPath().replace(".feature", "").split("/features/")[1];
         scenarioName = testCase.getName();
@@ -48,7 +48,7 @@ public class ReportListener implements ConcurrentEventListener {
         scenarioTests.put(scenarioName, scenarioTest);
     }
 
-    private synchronized void onStepFinished(TestStepFinished event) {
+    private void onStepFinished(TestStepFinished event) {
 
         if (! event.getTestStep().getClass().getName().contains("HookTestStep")) {
             String scenarioName = event.getTestCase().getName();
@@ -88,7 +88,7 @@ public class ReportListener implements ConcurrentEventListener {
         }
     }
 
-    private synchronized void onTestRunFinished(TestRunFinished event) {
+    private void onTestRunFinished(TestRunFinished event) {
         extent.flush();
     }
 
