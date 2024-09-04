@@ -13,7 +13,7 @@ public class Hook {
 
 	@Before
 	public void init() throws Exception {
-		String env = Optional.ofNullable(System.getProperty("env")).orElse(String.valueOf(Env.QA));
+		String env = Optional.ofNullable(System.getProperty("env")).orElse(String.valueOf(Env.QA.get()));
 		ConfigLoader.loadFile(env);
 		DriverManager.initDriver();
 		LoggerHelper.createLogger();

@@ -2,6 +2,7 @@ package com.kimatesting.qa.utils.driver;
 
 
 import com.kimatesting.qa.enums.Browser;
+import com.kimatesting.qa.enums.Env;
 import com.kimatesting.qa.enums.Platform;
 import com.kimatesting.qa.utils.ConfigLoader;
 import org.openqa.selenium.WebDriver;
@@ -11,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.net.URI;
 import java.time.Duration;
+import java.util.Optional;
 
 
 public class DriverManager {
@@ -18,11 +20,11 @@ public class DriverManager {
     private static WebDriver driver;
 
     public static void initDriver() throws Exception {
-        Browser browser = Browser.valueOf(ConfigLoader.getProperty("browser"));
-        Boolean browserHeadless = Boolean.valueOf(ConfigLoader.getProperty("browserHeadless"));
+        Browser browser = Browser.valueOf(Optional.ofNullable(System.getProperty("browser")).orElse(ConfigLoader.getProperty("browser")));
+        Boolean browserHeadless = Boolean.valueOf(Optional.ofNullable(System.getProperty("browserHeadless")).orElse(ConfigLoader.getProperty("browserHeadless")));
+        Platform remotePlatform= Platform.valueOf(Optional.ofNullable(System.getProperty("remotePlatform")).orElse(ConfigLoader.getProperty("remote.platform")));
         int browserWidth = Integer.parseInt(ConfigLoader.getProperty("browserWidth"));
         int browserHeight = Integer.parseInt(ConfigLoader.getProperty("browserHeight"));
-        Platform remotePlatform= Platform.valueOf(ConfigLoader.getProperty("remote.platform"));
         Boolean remoteExecution= Boolean.valueOf(ConfigLoader.getProperty("remote.execution"));
         driver =  driverFactory.createDriver(remoteExecution,remotePlatform,browser,browserHeadless, browserWidth, browserHeight);
     }
